@@ -1,11 +1,12 @@
 [package]
 name = "xxysr-wasm"
-version = "0.1.1"
+version = "0.1.3"
 authors = ["zzzzv <80517273@qq.com>"]
 edition = "2021"
 description = "osu!mania XXY SR calculation for WebAssembly"
 repository = "https://github.com/zzzzv/xxysr-wasm"
 license = "Apache-2.0"
+keywords = ["osu", "mania"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -14,7 +15,7 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-wasm-bindgen = "0.2.84"
+wasm-bindgen = "0.2.95"
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
@@ -28,3 +29,4 @@ wasm-bindgen-test = "0.3.34"
 [profile.release]
 # Tell `rustc` to optimize for small code size.
 opt-level = "s"
+codegen-units = 1

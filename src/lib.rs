@@ -9,11 +9,6 @@ extern "C" {
     fn alert(s: &str);
 }
 
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, xxysr-wasm!");
-}
-
 // Some miscellaneous stuff:
 
 #[derive(Debug, Clone)]
