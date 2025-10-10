@@ -625,6 +625,9 @@ fn compute_c_and_ks(_col: u32, _total: u32, note_seq: &[(u32, u32, i32)], key_us
 
 pub fn calculate_from_text(text: &str, speed: f64) -> io::Result<f64> {
     let data = OsuDataLegacy::from_text(text)?;
+    if (data.misc.circle_size > 10) || (data.misc.circle_size < 1) {
+        return Err(io::Error::new(io::ErrorKind::InvalidInput, "Circle size must be between 1 and 10"));
+    }
     calculate_from_data(&data, speed)
 }
 
